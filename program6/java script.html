@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>javascript</title>
+</head>
+<body>
+<h1>java script string and math fuction</h1>
+<script>
+document.writeln("<p><b>Math.E:</b> " + Math.E + "</p>")
+document.writeln("<p><b>Math.PI:</b> " + Math.PI + "</p>" )
+document.writeln("<p><b>Math.SQRT2:</b> " + Math.SQRT2 + "</p>" )
+document.writeln("<p><b>Math.SQRT1_2:</b> " + Math.SQRT1_2 + "</p>" )
+document.writeln("<p><b>Math.LN2:</b> " + Math.LN2 + "</p>" )
+document.writeln("<p><b>Math.LN10:</b> " + Math.LN10 + "</p>" )
+document.writeln("<p><b>Math.LOG2E:</b> " + Math.LOG2E + "</p>" )
+document.writeln("<p><b>Math.Log10E:</b> " + Math.LOG10E + "</p>")     	
+</script>
+<h2>math objects</h2>
+<script>
+let number = 7.52;
+document.writeln("Number:" + number + "<br>");
+document.writeln("integer part:" + Math.floor(number) + "<br>");
+document.writeln("Nearest integer:" + Math.round(number) + "<br>");
+document.writeln("maximum number(6,4,8,2):" +Math.max(6,4,8,2)+ "<br>");
+document.writeln("minimum number(6,4,8,2):" +Math.min(6,4,8,2)+ "<br>");
+</script>
+<h2>string objects</h2>
+<script>
+let str="shifna k n";
+
+document.writeln("string is:" + str + "<br>")
+document.writeln("Length of string list" +str.length + "<br>")
+document.writeln("string in uppercase:" +str.toUpperCase() + "</br>");
+document.writeln("string in lowercase:" +str.toLowerCase() + "</br>");
+let str1 = "shifna";
+let str2 = "kn";
+let joined = [str1, str2].join(" ");
+document.writeln("Joined string: " + joined + "<br>");
+let replace = str.replace("kn");
+document.writeln("replace kn in string: " + replace + "<br>");
+</script>
+</body>
+</html>
+
