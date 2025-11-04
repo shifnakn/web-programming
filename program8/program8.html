@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title>Registration Form</title>
+  
+  <script>
+    function validateForm(form) {
+      var name = form.name.value.trim();
+      var phone = form.phone.value.trim();
+      var email = form.email.value.trim();
+      var password = form.password.value.trim();
+
+      
+      if (name === "") {
+        alert("Please enter your name");
+        return false;
+      }
+
+      
+      if (phone === "") {
+        alert("Please enter your phone number");
+        return false;
+      }
+
+      var phonePattern = /^[0-9]{10}$/;
+      if (!phone.match(phonePattern)) {
+        alert("Please enter a valid 10-digit phone number");
+        return false;
+      }
+
+     
+      if (email === "") {
+        alert("Please enter your email");
+        return false;
+      }
+
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address");
+        return false;
+      }
+
+      
+      if (password === "") {
+        alert("Please enter your password");
+        return false;
+      }
+
+      
+      var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/;
+      if (!password.match(passwordPattern)) {
+        alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
+        return false;
+      }
+
+      alert("Registration successful!");
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <fieldset>
+    <legend>User Information</legend>
+    <form name="registrationForm" onsubmit="return validateForm(this)">
+      Name: <input type="text" name="name"><br><br>
+      Phone: <input type="text" name="phone"><br><br>
+      Email: <input type="text" name="email"><br><br>
+      Password: <input type="password" name="password"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </fieldset>
+</body>
+</html>
+
