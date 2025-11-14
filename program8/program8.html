@@ -1,86 +1,100 @@
 <html>
 <head>
-  <title>Registration Form</title>
+<title>Registration Form</title>
+<script>
+function validateForm(form) {
+  const username = form.username.value.trim();
+  const name = form.name.value.trim();
+  const phone = form.phone.value.trim();
+  const email = form.email.value.trim();
+  const password = form.password.value.trim();
+  const confirmPassword = form.confirmPassword.value.trim();
+
   
-  <script>
-    function validateForm(form) {
-      var name = form.name.value.trim();
-      var phone = form.phone.value.trim();
-      var email = form.email.value.trim();
-      var password = form.password.value.trim();
-      var confirmPassword = form.confirmPassword.value.trim();
+  if (username === "") {
+    alert("Please enter your username");
+    return false;
+  }
 
-      
-      if (name === "") {
-        alert("Please enter your name");
-        return false;
-      }
+  const usernamePattern = /^[a-zA-Z0-9_]{3,15}$/;
+  if (!usernamePattern.test(username)) {
+    alert("Username must be 3-15 characters long and contain only letters, numbers, or underscores.");
+    return false;
+  }
 
-     
-      if (phone === "") {
-        alert("Please enter your phone number");
-        return false;
-      }
 
-      var phonePattern = /^[0-9]{10}$/;
-      if (!phone.match(phonePattern)) {
-        alert("Please enter a valid 10-digit phone number");
-        return false;
-      }
+  if (name === "") {
+    alert("Please enter your name");
+    return false;
+  }
 
-     
-      if (email === "") {
-        alert("Please enter your email");
-        return false;
-      }
+ 
+  if (phone === "") {
+    alert("Please enter your phone number");
+    return false;
+  }
 
-      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email.match(emailPattern)) {
-        alert("Please enter a valid email address");
-        return false;
-      }
+  const phonePattern = /^[0-9]{10}$/;
+  if (!phonePattern.test(phone)) {
+    alert("Please enter a valid 10-digit phone number");
+    return false;
+  }
 
-      
-      if (password === "") {
-        alert("Please enter your password");
-        return false;
-      }
 
-      var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/;
-      if (!password.match(passwordPattern)) {
-        alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
-        return false;
-      }
+  if (email === "") {
+    alert("Please enter your email");
+    return false;
+  }
 
-      
-      if (confirmPassword === "") {
-        alert("Please confirm your password");
-        return false;
-      }
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address");
+    return false;
+  }
 
-      if (password !== confirmPassword) {
-        alert("Passwords do not match. Please try again.");
-        return false;
-      }
 
-      alert("Registration successful!");
-      return true;
-    }
-  </script>
+  if (password === "") {
+    alert("Please enter your password");
+    return false;
+  }
+
+  const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/;
+  if (!passwordPattern.test(password)) {
+    alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
+    return false;
+  }
+
+  
+  if (confirmPassword === "") {
+    alert("Please confirm your password");
+    return false;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match. Please try again.");
+    return false;
+  }
+
+  alert("Registration successful!");
+  return true;
+}
+</script>
 </head>
 <body>
-  <h2>Registration Form</h2>
-  <fieldset>
-    <legend>User Information</legend>
-    <form name="registrationForm" onsubmit="return validateForm(this)">
+<h2>Registration Form</h2>
+<fieldset>
+<legend>User Information</legend>
+
+  <form name="registrationForm" onsubmit="return validateForm(this)">
+      Username: <input type="text" name="username"><br><br>
       Name: <input type="text" name="name"><br><br>
       Phone: <input type="text" name="phone"><br><br>
       Email: <input type="text" name="email"><br><br>
       Password: <input type="password" name="password"><br><br>
       Confirm Password: <input type="password" name="confirmPassword"><br><br>
       <input type="submit" value="Submit">
-    </form>
-  </fieldset>
+</form>
+</fieldset>
 </body>
 </html>
 
