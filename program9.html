@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>heading</title>
+
+<style>
+.image {
+    width: 200px;
+    height: 500px;
+    margin-top: 250px;
+    border-radius: 90px;
+}
+</style>
+</head>
+
+<body>
+<center>
+<img class="image" 
+ id="image1" 
+ src="/home/mca/shh/html/pp/image1.jpeg"
+  onmouseover="handleMouseOver()" 
+  onmouseout="handleMouseOut()">
+
+    <p id="text"></p>
+</center>
+
+<script>
+function handleMouseOver() {
+    document.getElementById("image1").src = "/home/mca/shh/html/pp/image2.jpeg";
+    document.getElementById("text").textContent = "Mouse Over";
+}
+
+function handleMouseOut() {
+    document.getElementById("image1").src = "/home/mca/shh/html/pp/image3.jpeg";
+    document.getElementById("text").textContent = "Mouse Out";
+}
+</script>
+
+</body>
+</html>
